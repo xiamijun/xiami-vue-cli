@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.downloadLocal = undefined;
 
-var _rc = require('./rc');
-
 var _constants = require('./constants');
 
 var _downloadGitRepo = require('download-git-repo');

@@ -1,4 +1,3 @@
-import {getAll} from './rc'
 import {URL} from './constants'
 import downloadGit from 'download-git-repo'
 
