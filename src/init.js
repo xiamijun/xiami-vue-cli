@@ -25,17 +25,17 @@ let init = async (templateName, projectName) => {
       loading.start()
       downloadLocal(templateName, projectName).then(() => {
         loading.succeed()
-        // const fileName = `${projectName}/package.json`
-        // if (fs.existsSync(fileName)) {
-        //   const data = fs.readFileSync(fileName).toString()
-        //   let json = JSON.parse(data)
-        //   json.name = projectName
-        //   json.author = answer.author
-        //   json.description = answer.description
-        //   // 修改项目文件夹中 package.json 文件
-        //   fs.writeFileSync(fileName, JSON.stringify(json, null, '\t'), 'utf-8')
-        //   console.log(symbol.success, chalk.green('Project initialization finished!'));
-        // }
+        const fileName = `${projectName}/package.json`
+        if (fs.existsSync(fileName)) {
+          const data = fs.readFileSync(fileName).toString()
+          let json = JSON.parse(data)
+          json.name = projectName
+          json.author = answer.author
+          json.description = answer.description
+          // 修改项目文件夹中 package.json 文件
+          fs.writeFileSync(fileName, JSON.stringify(json, null, '\t'), 'utf-8')
+          console.log(symbol.success, chalk.green('Project initialization finished!'));
+        }
       }, () => {
         loading.fail()
       })
